@@ -13,7 +13,8 @@ public class PlayerBehaviour : MonoBehaviour
     Vector2 _moveInputs;
     private Rigidbody2D _rb;
     IInteractable _closestInteractable;
-    bool _canMove;
+    bool _canMove = true;
+
     public bool CanMove
     {
         get => _canMove; set => _canMove = value;
