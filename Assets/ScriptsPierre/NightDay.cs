@@ -17,7 +17,7 @@ public class NightDay : MonoBehaviour
     private Vector3 _centerPos;
     private float _rotationSpeedTemp;
 
-    public void ChangeDay() => StartChangeDay();
+    public void OpenChangeDay() => StartChangeDay();
 
     void Awake()
     {
@@ -39,6 +39,11 @@ public class NightDay : MonoBehaviour
     {
         _animator.SetBool("EndChangeDay", false);
         _animator.SetTrigger("StartChangeDay");
+        LoadScreen.instance.StartLoadScreen();
+    }
+
+    private void ChangeDay()
+    {
         _rotationSpeed = _rotationSpeedTemp;
 
         StartCoroutine(RotateAroundCenter(_sun, 1, 180f));
