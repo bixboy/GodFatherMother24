@@ -1,14 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.U2D;
+using static Unity.VisualScripting.Member;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-
+    [SerializeField] private float _moveSpeed = 5f;
     Vector2 _moveInputs;
     private Rigidbody2D _rb;
-    [SerializeField]private float _moveSpeed = 5f;
+    IInteractable _closestInteractable;
+    bool _canMove;
+    public bool CanMove
+    {
+        get => _canMove; set => _canMove = value;
+    }
 
     private void Start()
     {
@@ -17,9 +26,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("Move : " + _moveInputs);
-        //Move here
-        MovePlayer();
+        if(_canMove)
+            MovePlayer();
     }
 
     #region Movements
@@ -40,8 +48,23 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Interact");
+            _closestInteractable?.OnInteract(this);
         }
     }
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        var tempMonoArray = col.gameObject.GetComponents<MonoBehaviour>();
+
+        foreach (var monoBehaviour in tempMonoArray)
+        {
+            IInteractable tempInteractable = monoBehaviour as IInteractable;
+
+            if (tempInteractable != null)
+            {
+                _closestInteractable = tempInteractable;
+                break;
+            }
+        }
+    }
 }
