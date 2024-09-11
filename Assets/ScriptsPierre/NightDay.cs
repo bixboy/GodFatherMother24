@@ -19,9 +19,9 @@ public class NightDay : MonoBehaviour
 
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _rotationSpeedTemp = _rotationSpeed;
         _rotationSpeed = 0;
-        _animator = GetComponent<Animator>();
 
         _centerPos = _centerPoint.GetComponent<RectTransform>().position;
         _sun.position = _centerPos + new Vector3(0f, _radius, 0f);
