@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
 
     private Animator _animator;
 
-    private void start()
+    void Start()
     {
         _animator = GetComponent<Animator>();
     }

@@ -41,6 +41,7 @@ public class PaintingPuzzle : MonoBehaviour
     private void Win()
     {
         // GO TO NEXT DAY
+        NightDay.instance.ChangeDay();
     }
 
 }

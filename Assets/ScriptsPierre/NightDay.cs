@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class NightDay : MonoBehaviour
 {
+    public static NightDay instance { get; private set; }
+
     [SerializeField] private float _rotationSpeed = 10f;
     [SerializeField] private float _radius = 10f;
     private Animator _animator;
@@ -16,6 +18,11 @@ public class NightDay : MonoBehaviour
     private float _rotationSpeedTemp;
 
     public void ChangeDay() => StartChangeDay();
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
