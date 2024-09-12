@@ -16,27 +16,33 @@ public class PaintingPuzzle : MonoBehaviour
         _allPaintings = GetComponentsInChildren<Painting>().ToList();
     }
 
-    public void CheckPuzzle(int newLightIndex)
+    public bool CheckPuzzle(int newLightIndex)
     {
         _currentPaintingOrder.Add(newLightIndex);
 
-        if (_currentPaintingOrder[^1] != _paintingOrder[_currentPaintingOrder.Count-1])
-            ResetAll();
+        if (_currentPaintingOrder[^1] != _paintingOrder[_currentPaintingOrder.Count - 1])
+        {
+            ResetAll(newLightIndex);
+            return false;
+        }
 
         if (_currentPaintingOrder.Count >= _paintingOrder.Count)
         {
             Win();
-            return;
+            return true;
         }
+
+        return true;
     }
 
-    private void ResetAll()
+    private void ResetAll(int failedLightID)
     {
         _currentPaintingOrder.Clear();
 
-        foreach (var painting in _allPaintings)
+        foreach (Painting painting in _allPaintings)
         {
-            painting.SwitchLight(false);
+            if(painting.PaintingIndex != failedLightID)
+                painting.SwitchLight(Painting.LightAnimState.OFF);
         }
     }
     private void Win()

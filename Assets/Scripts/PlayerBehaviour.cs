@@ -53,6 +53,14 @@ public class PlayerBehaviour : MonoBehaviour
         {
             _closestInteractable?.OnInteract(this);
         }
+    }    
+    
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            TellerActions.Instance.NextTellerAction();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
