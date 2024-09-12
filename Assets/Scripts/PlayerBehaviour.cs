@@ -10,6 +10,8 @@ using static Unity.VisualScripting.Member;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 5f;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     Vector2 _moveInputs;
     private Rigidbody2D _rb;
     IInteractable _closestInteractable;
@@ -43,6 +45,9 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Vector2 movement = _moveInputs * _moveSpeed * Time.fixedDeltaTime;
         _rb.MovePosition(_rb.position + movement);
+        _animator.SetBool("IsWalking", _moveInputs.magnitude != 0);
+        if(_moveInputs.magnitude != 0)
+            _spriteRenderer.flipX = _moveInputs.x >= 0;
     }
 
     #endregion
@@ -77,5 +82,9 @@ public class PlayerBehaviour : MonoBehaviour
                 break;
             }
         }
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        _closestInteractable = null;
     }
 }
