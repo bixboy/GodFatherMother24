@@ -37,9 +37,9 @@ public class NightDay : MonoBehaviour
 
     private void StartChangeDay()
     {
+        LoadScreen.instance.StartLoadScreen();
         _animator.SetBool("EndChangeDay", false);
         _animator.SetTrigger("StartChangeDay");
-        LoadScreen.instance.StartLoadScreen();
     }
 
     private void ChangeDay()
@@ -59,6 +59,7 @@ public class NightDay : MonoBehaviour
     private void EndChangeDay()
     {
         _animator.SetBool("EndChangeDay", false);
+        LoadScreen.instance.StartLoadScreen();
     }
 
     private IEnumerator RotateAroundCenter(Transform obj, int direction, float targetRotation)
