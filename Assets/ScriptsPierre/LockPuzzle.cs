@@ -14,10 +14,12 @@ public class LockPuzzle : MonoBehaviour
     [SerializeField] private Sprite _lockOpened;
     private int _passWord = 1234;
     private bool _win = false;
+    private PlayerBehaviour _player;
 
     void Start()
     {
         //GameObject newInstance = Instantiate(_passWordUi, Vector3.zero, Quaternion.identity);
+        _player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
 
         for (int i = 0; i < _digits.Length; i++)
         {
@@ -49,7 +51,8 @@ public class LockPuzzle : MonoBehaviour
         {
             _exitDoor.Open();
             _lockImg.sprite = _lockOpened;
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1f);
+            _player.CanMove = true;
             Destroy(gameObject);
         }
     }

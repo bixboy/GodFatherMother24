@@ -17,7 +17,7 @@ public class NightDay : MonoBehaviour
     private Vector3 _centerPos;
     private float _rotationSpeedTemp;
 
-    public void OpenChangeDay() => StartChangeDay();
+    public void OpenChangeDay() => StartCoroutine(StartChangeDay());
 
     void Awake()
     {
@@ -35,9 +35,10 @@ public class NightDay : MonoBehaviour
         _moon.position = _centerPos + new Vector3(0f, -_radius, 0f);
     }
 
-    private void StartChangeDay()
+    private IEnumerator StartChangeDay()
     {
         LoadScreen.instance.StartLoadScreen();
+        yield return new WaitForSeconds(1f);
         _animator.SetBool("IsChangeDay", true);
     }
 

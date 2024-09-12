@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class QuizPuzzle : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _questionText;
     [SerializeField] private Button[] _answerButtons;
     [SerializeField] private TextMeshProUGUI[] _answerTexts;
+    [SerializeField] private ExitDoor _exitDoor;
 
     private int correctAnswerIndex;
     private string[] questions = {
@@ -26,10 +28,12 @@ public class QuizPuzzle : MonoBehaviour
     private int[] _correctAnswers = { 0, 1, 1, 2 }; // Index des bonnes réponses
 
     private int _currentQuestion = 0;
+    private PlayerBehaviour _player;
 
     private void Start()
     {
         DisplayQuestion();
+        _player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
     }
 
     // Affiche la question et les réponses
@@ -52,13 +56,13 @@ public class QuizPuzzle : MonoBehaviour
         if (index == correctAnswerIndex)
         {
             Debug.Log("Bonne réponse!");
+            NextQuestion();
         }
         else
         {
             Debug.Log("Mauvaise réponse!");
         }
 
-        NextQuestion();
     }
 
     private void NextQuestion()
@@ -71,7 +75,15 @@ public class QuizPuzzle : MonoBehaviour
         }
         else
         {
+            Win();
             Debug.Log("Quiz terminé !");
         }
+    }
+
+    private void Win()
+    {
+        _exitDoor.Open();
+        _player.CanMove = true;
+        Destroy(gameObject);
     }
 }
