@@ -69,7 +69,7 @@ public class dialogue : MonoBehaviour
     #region open & close dialogues
     private void OpenDialogue()
     {
-        _animator.SetBool("IsOpened", false);
+        _animator.SetBool("IsOpened", true);
         _isPlayed = true;
     }
 

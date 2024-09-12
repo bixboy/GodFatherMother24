@@ -352,7 +352,6 @@ MonoBehaviour:
   _timeDialogueHide: 3
   _textSpeed: 0.08
   _dontTimeDialogueHide: 0
-  test: {fileID: 21300000, guid: 1b7f1aaaf17e06b45a18de64a7ff8dde, type: 3}
 --- !u!95 &3097231042991085977
 Animator:
   serializedVersion: 5
@@ -382,7 +381,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6463539182770457453}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

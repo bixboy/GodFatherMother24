@@ -767,7 +767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2617886875314502073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -848,6 +848,9 @@ MonoBehaviour:
   - {fileID: 2898000868589731783}
   - {fileID: 1318259983687239399}
   _digits: 00000000000000000000000000000000
+  _exitDoor: {fileID: 0}
+  _lockImg: {fileID: 1101180968242892393}
+  _lockOpened: {fileID: 21300000, guid: d572013c5f12c044d818f4f30cb00477, type: 3}
 --- !u!1 &7680081435939771738
 GameObject:
   m_ObjectHideFlags: 0

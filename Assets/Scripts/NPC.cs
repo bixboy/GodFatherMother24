@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,17 +6,21 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour, IInteractable
 {
-    [SerializeField] private List<string> listLines = new();
+    [SerializeField] private List<string> _listLines = new();
     bool _isTalking = false;
     [SerializeField] private Sprite _characterImg;
-
+    private int _index = 0;
     public void OnInteract(PlayerBehaviour behaviour)
     {
-        if(_isTalking == false)
+        if (_isTalking == false)
         {
             //behaviour.CanMove = false;
             //talk
-            dialogue.instance.SartDialogue("gfdgfdfgdfgdfgfd", _characterImg);
+            Debug.Log("ouiii");
+            string text = _listLines[_index];
+            dialogue.instance.SartDialogue(text, _characterImg);
+            _index++;
+            if (_index == _listLines.Count) _index = 0;
         }
         else        
         {

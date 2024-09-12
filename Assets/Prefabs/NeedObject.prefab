@@ -915,7 +915,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2529267174666782480}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e06d0002d04ec04e858710bffa0d467, type: 3}
   m_Name: 
@@ -2286,10 +2286,6 @@ PrefabInstance:
     - target: {fileID: 6553700423730168235, guid: 1dd4509fc1807624dbb8fa2bb2b86ee9, type: 3}
       propertyPath: m_Name
       value: LockPuzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553700423730168235, guid: 1dd4509fc1807624dbb8fa2bb2b86ee9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6956712458130449224, guid: 1dd4509fc1807624dbb8fa2bb2b86ee9, type: 3}
       propertyPath: m_SizeDelta.x
