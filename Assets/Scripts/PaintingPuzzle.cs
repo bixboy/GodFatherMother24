@@ -7,6 +7,7 @@ public class PaintingPuzzle : MonoBehaviour
 {
     private List<Painting> _allPaintings = new();
 
+    [SerializeField] private ExitDoor _exitDoor;
     [SerializeField] private List<int> _paintingOrder = new(4);
                      private List<int> _currentPaintingOrder = new();
 
@@ -40,8 +41,7 @@ public class PaintingPuzzle : MonoBehaviour
     }
     private void Win()
     {
-        // GO TO NEXT DAY
-        NightDay.instance.OpenChangeDay();
+        _exitDoor.Open();
     }
 
 }
