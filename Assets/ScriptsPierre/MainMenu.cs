@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame() => Play();
     public void QuitGame() => Quit();
     public void PauseGame(InputAction.CallbackContext context) => Pause(context);
 
@@ -18,11 +17,7 @@ public class MainMenu : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
     }
-
-    private void Play()
-    {
-        SceneManager.LoadScene("EmaScene");
-    }
+    
 
     private void Quit()
     {

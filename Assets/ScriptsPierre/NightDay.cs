@@ -16,8 +16,11 @@ public class NightDay : MonoBehaviour
     [SerializeField] private GameObject _centerPoint;
     private Vector3 _centerPos;
     private float _rotationSpeedTemp;
+    bool _waitingForInput = false;
+    public bool WaitingForInput => _waitingForInput;
 
     public void OpenChangeDay() => StartChangeDay();
+    public void NextDay() => ChangeDay();
 
     void Awake()
     {
@@ -37,12 +40,14 @@ public class NightDay : MonoBehaviour
 
     private void StartChangeDay()
     {
+        _waitingForInput = true;
         LoadScreen.instance.StartLoadScreen();
         _animator.SetBool("IsChangeDay", true);
     }
 
     private void ChangeDay()
     {
+        _waitingForInput = false ;
         _rotationSpeed = _rotationSpeedTemp;
 
         StartCoroutine(RotateAroundCenter(_sun, 1, 180f));
@@ -51,7 +56,7 @@ public class NightDay : MonoBehaviour
 
     private void ChangeRoom()
     {
-
+        GameManager.Instance.NextScene();
         EndChangeDay();
     }
 
