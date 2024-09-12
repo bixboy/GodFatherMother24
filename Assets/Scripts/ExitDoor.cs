@@ -7,6 +7,7 @@ public class ExitDoor : MonoBehaviour
     private Animator _animator;
 
     [SerializeField] private GameObject _doorBlock;
+    bool _isLocked = true;
 
     private void Start()
     {
@@ -15,10 +16,13 @@ public class ExitDoor : MonoBehaviour
     public void Open()
     {
         _animator.SetTrigger("Open");
+        _isLocked = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (_isLocked)
+            return;
         if (collision.gameObject.CompareTag("Player"))
         {
             NightDay.instance.OpenChangeDay();

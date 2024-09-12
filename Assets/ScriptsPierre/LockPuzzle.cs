@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LockPuzzle : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI[] _digitTexts;
     [SerializeField] private int[] _digits = new int[4];
+    [SerializeField] private ExitDoor _exitDoor;
+
+    [SerializeField] private Image _lockImg;
+    [SerializeField] private Sprite _lockOpened;
     private int _passWord = 1234;
     private bool _win = false;
 
@@ -34,15 +39,17 @@ public class LockPuzzle : MonoBehaviour
         if (enteredPassword == _passWord)
         {
             _win = true;
-            Win();
+            StartCoroutine(Win());
         }
     }
 
-    private void Win()
+    private IEnumerator Win()
     {
         if (_win)
         {
-            NightDay.instance.OpenChangeDay();
+            _exitDoor.Open();
+            _lockImg.sprite = _lockOpened;
+            yield return new WaitForSeconds(2);
             Destroy(gameObject);
         }
     }

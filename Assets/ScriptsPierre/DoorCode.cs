@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class DoorCode : MonoBehaviour, IInteractable
@@ -10,12 +11,13 @@ public class DoorCode : MonoBehaviour, IInteractable
     public void OnInteract(PlayerBehaviour behaviour)
     {
         if (_isActive) return;
-        OpenDoor(true);
+        OpenPuzzle(true);
     }
 
-    private void OpenDoor(bool on)
+    private void OpenPuzzle(bool on)
     {
         _isActive = on;
         _lockPuzzle.SetActive(true);
+        Destroy(GetComponent<BoxCollider2D>());
     }
 }

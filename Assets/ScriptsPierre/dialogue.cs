@@ -34,8 +34,6 @@ public class dialogue : MonoBehaviour
     public bool GetDilogueIsPlayed() => _isPlayed;
     public void CloseDialogue() => Disable();
 
-    public Sprite test;
-
     private void Awake()
     {
         instance = this;
@@ -49,8 +47,6 @@ public class dialogue : MonoBehaviour
     {
         _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         _audio = GameObject.FindGameObjectWithTag("Sound").GetComponent<AudioSource>();
-
-        SartDialogue("gerhgehdpoghdfoghdofhgo", test);
     }
 
     #region Start dialogues
@@ -73,8 +69,7 @@ public class dialogue : MonoBehaviour
     #region open & close dialogues
     private void OpenDialogue()
     {
-        _animator.SetBool("Close", false);
-        _animator.SetTrigger("Open");
+        _animator.SetBool("IsOpened", false);
         _isPlayed = true;
     }
 
@@ -91,7 +86,7 @@ public class dialogue : MonoBehaviour
     private void Disable()
     {
         _isPlayed = false;
-        _animator.SetBool("Close", true);
+        _animator.SetBool("IsOpened", false);
 
         _dialogue.text = string.Empty;
 

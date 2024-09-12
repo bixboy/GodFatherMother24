@@ -35,7 +35,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         _moveInputs = context.ReadValue<Vector2>();
-        Debug.Log(_moveInputs);
+        //Debug.Log(_moveInputs);
 
     }
 
@@ -59,7 +59,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (context.performed)
         {
-            TellerActions.Instance.NextTellerAction();
+            TellerActions.Instance?.NextTellerAction();
         }
     }
 
