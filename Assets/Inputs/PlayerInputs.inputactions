@@ -1,5 +1,5 @@
 {
-    "name": "PlayerActions",
+    "name": "PlayerInputs",
     "maps": [
         {
             "name": "Player",
@@ -18,6 +18,15 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "79afa2c4-2664-405c-8118-957e9086ddda",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseClick",
+                    "type": "Button",
+                    "id": "8d405809-104e-45da-abdd-29f81c193a43",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -143,6 +152,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "344abd40-058d-47c6-9067-0caae8c0efa9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
