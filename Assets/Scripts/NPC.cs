@@ -7,13 +7,15 @@ public class NPC : MonoBehaviour, IInteractable
 {
     [SerializeField] private List<string> listLines = new();
     bool _isTalking = false;
+    [SerializeField] private Sprite _characterImg;
 
     public void OnInteract(PlayerBehaviour behaviour)
     {
         if(_isTalking == false)
         {
-            behaviour.CanMove = false;
+            //behaviour.CanMove = false;
             //talk
+            dialogue.instance.SartDialogue("gfdgfdfgdfgdfgfd", _characterImg);
         }
         else        
         {

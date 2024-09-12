@@ -38,8 +38,7 @@ public class NightDay : MonoBehaviour
     private void StartChangeDay()
     {
         LoadScreen.instance.StartLoadScreen();
-        _animator.SetBool("EndChangeDay", false);
-        _animator.SetTrigger("StartChangeDay");
+        _animator.SetBool("IsChangeDay", true);
     }
 
     private void ChangeDay()
@@ -58,7 +57,7 @@ public class NightDay : MonoBehaviour
 
     private void EndChangeDay()
     {
-        _animator.SetBool("EndChangeDay", false);
+        _animator.SetBool("IsChangeDay", false);
         LoadScreen.instance.StartLoadScreen();
     }
 

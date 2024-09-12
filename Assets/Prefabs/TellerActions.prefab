@@ -44,8 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b81af4f1ff1734a8d22fbcd1c491b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tellerActions:
-  - Target: {fileID: 0}
-    Type: 0
-  - Target: {fileID: 0}
-    Type: 1
+  _tellerActions: []

@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36685585575a63b478504346b93cec74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _exitDoor: {fileID: 0}
   _paintingOrder: 02000000030000000400000001000000
 --- !u!1001 &1029145723701453355
 PrefabInstance:
@@ -57,22 +58,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4665961975595642136}
     m_Modifications:
-    - target: {fileID: 1857893259567348236, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4352
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857893259567348236, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2176
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984667712039109629, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984667712039109629, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.29
-      objectReference: {fileID: 0}
     - target: {fileID: 2790847285747117426, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
       propertyPath: m_Name
       value: Painting 2
@@ -117,18 +102,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.b
-      value: 0.3996653
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7175407
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.r
-      value: 0.87169814
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -147,22 +120,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4665961975595642136}
     m_Modifications:
-    - target: {fileID: 1857893259567348236, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4352
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857893259567348236, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2176
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984667712039109629, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984667712039109629, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.29
-      objectReference: {fileID: 0}
     - target: {fileID: 2790847285747117426, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
       propertyPath: m_Name
       value: Painting 1
@@ -207,18 +164,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.b
-      value: 0.3996653
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7175407
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.r
-      value: 0.87169814
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -237,26 +182,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4665961975595642136}
     m_Modifications:
-    - target: {fileID: 1857893259567348236, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4352
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857893259567348236, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857893259567348236, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2176
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984667712039109629, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984667712039109629, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.29
-      objectReference: {fileID: 0}
     - target: {fileID: 2790847285747117426, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
       propertyPath: m_Name
       value: Painting 4
@@ -301,18 +226,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.b
-      value: 0.3996653
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7175407
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.r
-      value: 0.87169814
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -331,22 +244,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4665961975595642136}
     m_Modifications:
-    - target: {fileID: 1857893259567348236, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4352
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857893259567348236, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2176
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984667712039109629, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984667712039109629, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.29
-      objectReference: {fileID: 0}
     - target: {fileID: 2790847285747117426, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
       propertyPath: m_Name
       value: Painting 3
@@ -390,18 +287,6 @@ PrefabInstance:
     - target: {fileID: 3692059991525262961, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.b
-      value: 0.3996653
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7175407
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167604113344873578, guid: 8fc998b15ae2f89478905e04ecdf022d, type: 3}
-      propertyPath: m_Color.r
-      value: 0.87169814
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
