@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public void NextScene()
     {
         sceneIndex++;
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneIndex%5);
     }
 
 }

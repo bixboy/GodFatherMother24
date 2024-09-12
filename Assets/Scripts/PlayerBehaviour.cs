@@ -64,6 +64,12 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (context.performed)
         {
+            if (NightDay.instance.WaitingForInput)
+            {
+                NightDay.instance.NextDay();
+                return;
+            }
+
             TellerActions.Instance?.NextTellerAction();
         }
     }
