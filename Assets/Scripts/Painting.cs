@@ -6,13 +6,19 @@ using UnityEngine;
 
 public class Painting : MonoBehaviour, IInteractable
 {
-    [SerializeField] private SpriteRenderer _light;
+    [SerializeField] private Animator _lightAnim;
                      private PaintingPuzzle _paintingPuzzle;
                      private bool _isActivated = false;
                      private int _paintingIndex;
 
     public bool IsActivated => _isActivated;
     public int PaintingIndex => _paintingIndex;
+    public enum LightAnimState
+    {
+        ON,
+        OFF,
+        FAIL
+    }
 
     private void Start()
     {
@@ -24,14 +30,23 @@ public class Painting : MonoBehaviour, IInteractable
     {
         if (_isActivated)
             return;
-        SwitchLight(true);
-        _paintingPuzzle.CheckPuzzle(_paintingIndex);
+        SwitchLight(_paintingPuzzle.CheckPuzzle(_paintingIndex)? LightAnimState.ON : LightAnimState.FAIL);
     }
 
-    public void SwitchLight(bool on) 
+    public void SwitchLight(LightAnimState state) 
     {
-        _light.color = on ? Color.white : Color.black;
-        _isActivated = on;
+        switch (state)
+        {
+            case LightAnimState.ON:
+                _lightAnim.SetBool("ON", true);
+                return;
+            case LightAnimState.OFF:
+                _lightAnim.SetBool("ON", false);
+                return;
+            case LightAnimState.FAIL:
+                _lightAnim.SetTrigger("Fail");
+                return;
+        }
     }
 
 }
