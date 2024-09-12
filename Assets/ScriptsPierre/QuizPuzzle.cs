@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuizPuzzle : MonoBehaviour
 {
-    [SerializeField] private Text _questionText;
+    [SerializeField] private TextMeshProUGUI _questionText;
     [SerializeField] private Button[] _answerButtons;
-    [SerializeField] private Text[] _answerTexts;
+    [SerializeField] private TextMeshProUGUI[] _answerTexts;
 
     private int correctAnswerIndex;
     private string[] questions = {
@@ -38,7 +40,7 @@ public class QuizPuzzle : MonoBehaviour
 
         for (int i = 0; i < _answerButtons.Length; i++)
         {
-            _answerButtons[i].text = answers[_currentQuestion, i];
+            _answerTexts[i].text = answers[_currentQuestion, i];
             int index = i;
             _answerButtons[i].onClick.RemoveAllListeners();
             _answerButtons[i].onClick.AddListener(() => CheckAnswer(index));
