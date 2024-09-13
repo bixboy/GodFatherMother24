@@ -18,6 +18,7 @@ public class ExitDoor : MonoBehaviour
         _animator.SetTrigger("Open");
         _isLocked = false;
         gameObject.transform.position += new Vector3(0, 0, -1);
+        CameraManager.Instance.ScreenShake();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,6 +28,7 @@ public class ExitDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             NightDay.instance.OpenChangeDay();
+            collision.GetComponent<PlayerBehaviour>().CanMove = false;
         }
     }
 }
