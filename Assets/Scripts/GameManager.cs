@@ -21,12 +21,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private int sceneIndex=0;
+    public static int sceneIndex=0;
 
     public void NextScene()
     {
-        sceneIndex++;
-        SceneManager.LoadScene(sceneIndex%5);
+        ++sceneIndex;
+        sceneIndex = sceneIndex % 5;
+        Debug.Log(sceneIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
 
 }

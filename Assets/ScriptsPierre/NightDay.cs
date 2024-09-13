@@ -17,10 +17,10 @@ public class NightDay : MonoBehaviour
     private Vector3 _centerPos;
     private float _rotationSpeedTemp;
     bool _waitingForInput = false;
-    public bool WaitingForInput => _waitingForInput;
+    public bool WaitingForInput { get => _waitingForInput; set => _waitingForInput = value; }
 
     public void OpenChangeDay() => StartCoroutine(StartChangeDay());
-    public void NextDay() => ChangeDay();
+    public void NextDay() => StartCoroutine(ChangeDay());
 
     void Awake()
     {
@@ -43,27 +43,29 @@ public class NightDay : MonoBehaviour
         _waitingForInput = true;
         LoadScreen.instance.StartLoadScreen();
         yield return new WaitForSeconds(1f);
-        _animator.SetBool("IsChangeDay", true);
+        gameObject.GetComponent<CanvasGroup>().alpha = 1f;
     }
 
-    private void ChangeDay()
+    private IEnumerator ChangeDay()
     {
         _waitingForInput = false ;
         _rotationSpeed = _rotationSpeedTemp;
 
+        _animator.SetBool("IsChangeDay", true);
         StartCoroutine(RotateAroundCenter(_sun, 1, 180f));
-        StartCoroutine(RotateAroundCenter(_moon, 1, 180f));
+        yield return StartCoroutine(RotateAroundCenter(_moon, 1, 180f));
+        StartCoroutine(ChangeRoom());
     }
 
-    private void ChangeRoom()
+    private IEnumerator ChangeRoom()
     {
-        GameManager.Instance.NextScene();
         EndChangeDay();
+        yield return new WaitForSeconds(1f);
+        GameManager.Instance.NextScene();
     }
 
     private void EndChangeDay()
     {
-        _animator.SetBool("IsChangeDay", false);
         LoadScreen.instance.StartLoadScreen();
     }
 
@@ -87,6 +89,5 @@ public class NightDay : MonoBehaviour
 
             yield return null;
         }
-        ChangeRoom();
     }
 }

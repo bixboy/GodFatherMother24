@@ -11,7 +11,7 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 2936250837848168317}
+  - {fileID: 3672529671116273423}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -90,10 +90,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6901776421103316057}
-    m_Position: {x: -90, y: 250, z: 0}
+    m_Position: {x: -70, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5742614881447492205}
-    m_Position: {x: 160, y: 250, z: 0}
+    m_Position: {x: 180, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8655482036365967461}
     m_Position: {x: 30, y: 170, z: 0}
@@ -102,7 +102,7 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: -40, z: 0}
+  m_AnyStatePosition: {x: 50, y: 0, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -117,6 +117,12 @@ AnimatorController:
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsChangeDay
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Apear
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -157,7 +163,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &2936250837848168317
+--- !u!1101 &3672529671116273423
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

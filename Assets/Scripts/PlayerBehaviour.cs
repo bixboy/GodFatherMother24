@@ -67,6 +67,7 @@ public class PlayerBehaviour : MonoBehaviour
             if (NightDay.instance.WaitingForInput)
             {
                 NightDay.instance.NextDay();
+                NightDay.instance.WaitingForInput = false;
                 return;
             }
 
