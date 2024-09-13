@@ -720,6 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _doorBlock: {fileID: 3237701540690287044}
+  _openSound: {fileID: 8300000, guid: a836cd3f4c7c62949ae435d015730b3e, type: 3}
 --- !u!58 &4388648342245395450
 CircleCollider2D:
   m_ObjectHideFlags: 0

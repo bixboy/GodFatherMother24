@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance = null;
     public static GameManager Instance => instance;
+
+    public AudioClip _kingMusic;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -29,6 +32,10 @@ public class GameManager : MonoBehaviour
         sceneIndex = sceneIndex % 5;
         Debug.Log(sceneIndex);
         SceneManager.LoadScene(sceneIndex);
+        if (sceneIndex == 4)
+        {
+            AudioManager.instance.ChangeMusic(_kingMusic);
+        }
     }
 
 }

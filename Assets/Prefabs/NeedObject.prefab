@@ -2677,7 +2677,8 @@ PrefabInstance:
       value: SoundManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9190300746439936745, guid: fc7513ba6b72b2742918f4ce31942a85, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc7513ba6b72b2742918f4ce31942a85, type: 3}

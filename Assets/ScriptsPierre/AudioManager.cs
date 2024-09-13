@@ -15,14 +15,24 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] _playlistMusic;
 
     private int _index = 0;
-    private int _lastIndex = -1;
     private AudioClip[] _actualClip;
 
     public void PlayMusic() => PlayNextSound();
+    public void PlaySound(AudioClip sound) => StartSound(sound);
+    public void ChangeMusic(AudioClip music) => StartMusic(music);
 
     private void Awake()
     {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void Start()
@@ -36,34 +46,33 @@ public class AudioManager : MonoBehaviour
     {
         if (!_audioSource.isPlaying)
         {
-            //PlayNextSound();
+            PlayNextSound();
         }
     }
 
-    private void PlaySound(AudioClip sound)
+    private void StartSound(AudioClip sound)
     {
-        _audioSourceSound.clip = sound;
-        _audioSourceSound.Play();
+        if (_audioSourceSound == null)
+        {
+            _audioSourceSound = GameObject.FindGameObjectWithTag("Sound").GetComponent<AudioSource>();
+            StartSound(sound);
+        }
+        else
+        {
+            _audioSourceSound.clip = sound;
+            _audioSourceSound.Play();
+        }
+    }
+
+    private void StartMusic(AudioClip music)
+    {
+        _audioSource.clip = music;
+        _audioSource.Play();
     }
 
     private void PlayNextSound()
     {
         Debug.Log("play next sound");
-
-        if (_actualClip.Length == 0)
-        {
-            Debug.LogWarning("La playlist est vide.");
-            return;
-        }
-
-        int randomIndex;
-        do
-        {
-            randomIndex = Random.Range(0, _actualClip.Length);
-        } while (randomIndex == _lastIndex);
-
-        _lastIndex = randomIndex;
-        _index = randomIndex;
 
         _audioSource.clip = _actualClip[_index];
         _audioSource.Play();
