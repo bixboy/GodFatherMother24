@@ -10,6 +10,8 @@ public class LoadScreen : MonoBehaviour
 
     private CanvasGroup _canvasGroup;
 
+    public void FadeA() => StartCoroutine(FadeIn());
+
     private void Awake()
     {
         instance = this;

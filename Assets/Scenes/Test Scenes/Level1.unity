@@ -3539,7 +3539,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 27
-      m_TileSpriteIndex: 27
+      m_TileSpriteIndex: 36
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3789,7 +3789,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 24
+      m_TileSpriteIndex: 35
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3920,14 +3920,14 @@ Tilemap:
     m_Data: {fileID: -101372958, guid: a91ebcd65e276b54eaebc94e200672d3, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 1696285105, guid: 332859468e0478146aa354ac9766eb27, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 2006549698, guid: 6cfea6fdb72166549b38f10eff3ab7a2, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 7
     m_Data: {fileID: 1855531037, guid: 332859468e0478146aa354ac9766eb27, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 1370483951, guid: 6cfea6fdb72166549b38f10eff3ab7a2, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 435178936, guid: 6cfea6fdb72166549b38f10eff3ab7a2, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 7
     m_Data: {fileID: 541154187, guid: 332859468e0478146aa354ac9766eb27, type: 3}
   - m_RefCount: 7
@@ -3942,10 +3942,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 2006549698, guid: 6cfea6fdb72166549b38f10eff3ab7a2, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 435178936, guid: 6cfea6fdb72166549b38f10eff3ab7a2, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 335
     m_Data:
@@ -4098,9 +4098,37 @@ PrefabInstance:
       propertyPath: _characterImg
       value: 
       objectReference: {fileID: 21300000, guid: 1b7f1aaaf17e06b45a18de64a7ff8dde, type: 3}
+    - target: {fileID: 2632943223341362767, guid: 139b5a329aa8bc74285d3d71cefbb027, type: 3}
+      propertyPath: _listLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632943223341362767, guid: 139b5a329aa8bc74285d3d71cefbb027, type: 3}
+      propertyPath: _listLines.Array.data[0]
+      value: qzeghjykulhegsrdhtjfykjhdtjfsgrhfdgseg
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312712264086701879, guid: 139b5a329aa8bc74285d3d71cefbb027, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f9eec6f140b733e47a9324dbbaba99a0, type: 3}
+    - target: {fileID: 3312712264086701879, guid: 139b5a329aa8bc74285d3d71cefbb027, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312712264086701879, guid: 139b5a329aa8bc74285d3d71cefbb027, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312712264086701879, guid: 139b5a329aa8bc74285d3d71cefbb027, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7607882551926269657, guid: 139b5a329aa8bc74285d3d71cefbb027, type: 3}
       propertyPath: m_Name
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862022862195482438, guid: 139b5a329aa8bc74285d3d71cefbb027, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4218,6 +4246,22 @@ PrefabInstance:
       propertyPath: _exitDoor
       value: 
       objectReference: {fileID: 2036564604}
+    - target: {fileID: 7381682473585049045, guid: 2406c991ec4cedc4d864b2a9eb1c791d, type: 3}
+      propertyPath: _paintingOrder.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381682473585049045, guid: 2406c991ec4cedc4d864b2a9eb1c791d, type: 3}
+      propertyPath: _paintingOrder.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381682473585049045, guid: 2406c991ec4cedc4d864b2a9eb1c791d, type: 3}
+      propertyPath: _paintingOrder.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381682473585049045, guid: 2406c991ec4cedc4d864b2a9eb1c791d, type: 3}
+      propertyPath: _paintingOrder.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7976562898180498446, guid: 2406c991ec4cedc4d864b2a9eb1c791d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.98
@@ -10396,6 +10440,14 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1251358206}
+    - target: {fileID: 8916203887410185936, guid: 21553278781776c4393fffb260fb793b, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
+      value: 26.110317
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916203887410185936, guid: 21553278781776c4393fffb260fb793b, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
+      value: -7.451436
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -12,7 +12,7 @@ public class LockPuzzle : MonoBehaviour
 
     [SerializeField] private Image _lockImg;
     [SerializeField] private Sprite _lockOpened;
-    private int _passWord = 1234;
+    private int _passWord = 5432;
     private bool _win = false;
     private PlayerBehaviour _player;
 
