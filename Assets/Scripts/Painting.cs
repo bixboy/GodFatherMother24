@@ -39,12 +39,15 @@ public class Painting : MonoBehaviour, IInteractable
         {
             case LightAnimState.ON:
                 _lightAnim.SetBool("ON", true);
+                _isActivated = true;
                 return;
             case LightAnimState.OFF:
                 _lightAnim.SetBool("ON", false);
+                _isActivated = false;
                 return;
             case LightAnimState.FAIL:
                 _lightAnim.SetTrigger("Fail");
+                _isActivated = false;
                 return;
         }
     }
