@@ -54,11 +54,15 @@ public class NightDay : MonoBehaviour
         _animator.SetBool("IsChangeDay", true);
         StartCoroutine(RotateAroundCenter(_sun, 1, 180f));
         yield return StartCoroutine(RotateAroundCenter(_moon, 1, 180f));
+        _animator.SetBool("IsChangeDay", false);
+        StartCoroutine(RotateAroundCenter(_sun, 1, 180f));
+        yield return StartCoroutine(RotateAroundCenter(_moon, 1, 180f));
         StartCoroutine(ChangeRoom());
     }
 
     private IEnumerator ChangeRoom()
     {
+        yield return new WaitForSeconds(3f);
         EndChangeDay();
         yield return new WaitForSeconds(1f);
         GameManager.Instance.NextScene();
